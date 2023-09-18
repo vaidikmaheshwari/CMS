@@ -36,7 +36,7 @@ const AllContact = () => {
   const checkMyContacts=async()=>{
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:8000/api/mycontacts`, {
+      const res = await fetch(`https://cmsbackend-og87.onrender.com/api/mycontacts`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -61,7 +61,7 @@ const AllContact = () => {
   const deleteContact = async (id) => {
     if (window.confirm("are you sure you want to delete this contact ?")) {
       try {
-        const res = await fetch(`http://localhost:8000/api/delete/${id}`, {
+        const res = await fetch(`https://cmsbackend-og87.onrender.com/api/delete/${id}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -130,7 +130,7 @@ const AllContact = () => {
                 </p>
                 <button className="btn btn-primary" 
                 onClick={(e)=>{
-                  window.open(`http://localhost:8000/api/export/${user._id}`,'_blank')
+                  window.open(`https://cmsbackend-og87.onrender.com/api/export/${user._id}`,'_blank')
                 }}
                 >Download</button>
                 <BootstrapTable keyField='id' data={ contacts } columns={ columns } pagination={ paginationFactory() }/>

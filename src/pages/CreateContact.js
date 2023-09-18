@@ -24,7 +24,7 @@ const CreateContact = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const res = await fetch(`http://localhost:8000/api/contact`, {
+    const res = await fetch(`https://cmsbackend-og87.onrender.com/api/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
